@@ -20,6 +20,8 @@ let revrev listOfList =
         | x::xs -> reverseList xs ((reverseInner x [])::reversedList)
     reverseList listOfList []
 
+let revrev2 l = l |> List.rev |> List.map List.rev
+
 test <@ revrev [[1;2;3];[4;5;6]] = [[6;5;4];[3;2;1]] @>
 //
 //let rec reverseInner list reversedList =
